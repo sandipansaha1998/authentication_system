@@ -1,0 +1,4 @@
+node_modules/
+frontend/
+.vscode
+.DS_Store
