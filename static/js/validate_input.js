@@ -28,10 +28,16 @@ passwordInput.addEventListener('input', function() {
 // Password Match validation
 confirmPassword.addEventListener('input', function(event) {
     if (confirmPassword.value!='' && passwordInput.value == confirmPassword.value) {
-      submitButton.disabled = false;
-      confirmPasswordErrorContainer.classList.add('d-none');
+      isPasswordMatch = true;
+      if(isPasswordMatch && isEmailValidate )
+      {
+        submitButton.disabled = false;
+        confirmPasswordErrorContainer.classList.add('d-none');
+      }
+  
   
     } else {
+      isPasswordMatch = false;
       submitButton.disabled = true;
       confirmPasswordErrorContainer.classList.remove('d-none');
   

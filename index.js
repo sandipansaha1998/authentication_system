@@ -8,6 +8,8 @@ const app = express();
 // Authentication using Passport
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
+
 
 // For Sessions which allow Authenticated users to stay signed in for the mentioned period
 const session = require('express-session');
