@@ -1,0 +1,41 @@
+<form id="create-session" action="/access/create-session" method="post"></form>
+<!-- login form cintainer -->
+<div id="login-container" class="col-11 col-md-5 mx-auto mt-3 p-4 rounded">
+    <div class="box-title">
+        <!-- Heading -->
+        <h3 class="text-center fw-bold">Login</h3>
+    </div>
+    <!-- Email -->
+    <div class="user-input">
+
+        <label>Email</label>
+        <div class="container border-bottom p-3">
+            <i class="fa-regular fa-user"></i>
+            <input class="col-10" type="email" name="email" id="" placeholder="Type your email" form="create-session"
+                required>
+        </div>
+        <!-- Password -->
+        <label>Password</label>
+        <div class="container border-bottom p-3">
+            <span><i class="fa-solid fa-lock"></i></span>
+            <input class="col-10" type="password" name="password" id="" placeholder="Type your password"
+                form="create-session" required>
+        </div>
+
+
+    </div>
+    <!-- Forget Password -->
+    <div class="container text-end"><a href="/reset-password"><span class="me-auto">Forget password?</span></div></a>
+    <!-- Submit -->
+    <div class="button text-center">
+        <input class="col-6 rounded-pill" type="submit" value="Login" form="create-session">
+    </div>
+    <br>
+    <!-- Sign Up -->
+    <div class="sign-up text-center">
+        <a href="/sign-up">Create a new Account </a>
+        <p>Or</p>
+        <p> Sign in Using <a href="/user/auth/google"><i id="google-icon" class="fa-brands fa-google m-2 p-1 "></i></a>
+        </p>
+    </div>
+</div>

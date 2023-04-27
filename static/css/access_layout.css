@@ -1,0 +1,48 @@
+body {
+  background: linear-gradient(to right, #5668e3, #ab1b74) !important;
+}
+#login-container {
+  background: #ffffff;
+}
+#reset-container {
+  background: #ffffff;
+}
+input[type="submit"] {
+  background: linear-gradient(to right, #5668e3, #ab1b74) !important;
+  color: white;
+}
+input[type="submit"]:disabled {
+  background: gray !important;
+  color: white;
+  cursor: not-allowed;
+}
+input[type="submit"]:disabled:hover {
+  background: gray !important;
+  color: white;
+  cursor: not-allowed;
+}
+input[type="text"] {
+  border: none;
+  outline: none;
+}
+input[type="password"] {
+  border: none;
+  outline: none;
+}
+input[type="email"] {
+  border: none;
+  outline: none;
+}
+#google-icon {
+  color: black !important;
+  border: 1px solid black !important;
+  border-radius: 50% !important;
+}
+
+#google-icon:hover {
+  color: white !important;
+  background: black !important;
+}
+#signUp-container {
+  background: #ffffff;
+}
