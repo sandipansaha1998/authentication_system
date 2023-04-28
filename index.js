@@ -21,6 +21,10 @@ const expressLayouts = require('express-ejs-layouts');
 // Database Connection
 const db_connection = require('./config/mongoose');
 
+// Flash Middleware
+const flash = require('connect-flash');
+const customMware = require('./config/flashMiddleware');
+
 // Seting directory for  static files
 app.use(express.static('static'));
 
@@ -34,6 +38,7 @@ app.set('layout extractScripts',true);
 // Parsers
 app.use(express.urlencoded());
 app.use(express.json());
+
 
 // Setting views 
 app.set('view engine','ejs');
@@ -65,6 +70,11 @@ app.use(passportLocal.setAuthenticatedUser);//Middleware which passes on the use
 // Parsers
 app.use(express.urlencoded());
 app.use(express.json());
+
+// Conenct Flash instance
+app.use(flash());
+app.use(customMware.setFlash);
+
 
 // Routes
 app.use('/',require('./routes'));

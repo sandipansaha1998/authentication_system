@@ -7,7 +7,7 @@ const emailValidationMessage = document.querySelector("#validate-email");
 let isEmailValidate = false;
 let isPasswordMatch = false;
 
-// Toggles between succes and error message for user exsistance
+// Toggles between success and error message for user exsistance
 let toggleMessage = (isUserExsists) => {
     console.log(isUserExsists)
     if(isUserExsists)

@@ -25,11 +25,10 @@ module.exports.create = async function(req,res)
             newUser => 
             {
                 console.log("Successfully created")
-
+                req.flash('success','User Registered');
                 return res.redirect('/login');
             })
     }catch(e){
-        
             console.log(e)
             return;
     }
@@ -67,7 +66,10 @@ module.exports.sendResetPasswordLink = async function(req,res){
     try{
         let user = await User.findOne({email:req.body.email});
         if(!user){
+            
            console.log('No emails Found');
+           req.flash('error','No emails found , Sign up to start!');
+
             res.redirect('back');
         }
         else{
@@ -82,6 +84,7 @@ module.exports.sendResetPasswordLink = async function(req,res){
                 }
               })
             console.log('Reset Link Sent to Registered Email')
+            req.flash('success','Password reset link sent to Registered Email');
             res.redirect('/login')
         }
     }catch(e){
@@ -107,6 +110,7 @@ module.exports.resetPassword = async function(req,res){
         user.password = hashedPassword;
         user.save();
             console.log('Reset Password Succesful')
+            req.flash('success','Your password is reset successfully');
             return res.redirect('/login')
         }
 

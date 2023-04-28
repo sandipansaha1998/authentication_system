@@ -13,16 +13,19 @@ async function(req,email,password,done){ // Callback function
     .then(async (user)=>{
         if(!user) //No user Exsists
             {
+            req.flash('error','No user found.Sign up to Start')
             console.log("No user Found");
             return done(null,false);
             }
         let isCorrect = await bcrypt.compare(password, user.password); //Comparing typed password and actual password using bcrypt
         if(!isCorrect)
         {
-            console.log("Passwords donot match");
+            console.log("Incorrect Email/Password");
+            req.flash('error','Incorrect Email/Password');
             return done(null,false); // not authenticated
         }
         console.log("User login success. Logging in ...");
+   
         return done(null,user); // authenticated --> user is serialised and saved in the cookies
     }
     ).catch(err => {console.log(err);return})
