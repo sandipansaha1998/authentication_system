@@ -1,0 +1,31 @@
+<form action="/user/reset" method="post" id="reset-password"></form>
+<form id="reset-password" action="/user/reset" method="post"></form>
+
+<div id="reset-container" class="col-12 col-md-5 mx-auto mt-3 p-4 rounded">
+    <div class="box-title">
+        <h3 class="text-center fw-bold">Reset Password</h3>
+    </div>
+    <div class="user-input">
+        <input type="hidden" name="user_id" value="<%=user_id%>" form="reset-password">
+        <label>Password</label>
+        <div class="container border-bottom p-3">
+            <span><i class="fa-solid fa-lock"></i></span>
+            <input class="col-10" type="password" name="password" id="" placeholder="Type your password"
+                form="reset-password" required>
+        </div>
+
+        <label>Confirm Password</label>
+        <div class="container border-bottom p-3">
+            <span><i class="fa-solid fa-lock"></i></span>
+            <input class="col-10" type="password" name="confirm_password" id="" placeholder="Type your password"
+                form="reset-password" required>
+        </div>
+
+
+    </div>
+    <div class="button text-center">
+
+        <input class="col-6 rounded-pill" type="submit" value="Reset" form="reset-password">
+    </div>
+
+</div>

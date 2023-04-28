@@ -42,6 +42,35 @@ module.exports.renderSignUp = function(req,res)
     })
 }
 
+// Renders confirm email page for password reset link
+module.exports.renderConfirmEmail = function(req,res){
+    return res.render('./reset_password/confirm_email',{
+        title:'TaskGrid|Confirm Your Email',
+        layout:'access_layout'
+    })
+}
+//  Renders Password Reset Form for that particular User
+module.exports.renderResetPasswordForm = async function(req,res){
+    let user = await User.findById(req.params.id);
+    if(user)
+    {
+        console.log(Date.now() - user.resetPasswordLinkTime)
+        // Checking Expiry
+        if(Date.now() - user.resetPasswordLinkTime < 600000){
+            return res.render('./reset_password/reset_pass_form',{
+                title:'TaskGrid|Reset',
+                // User id is fetched from the url
+                user_id:req.params.id,
+                layout:'access_layout'
+            })
+        }
+        else{
+            res.status(404).send('<h1>Link has expired</h1>');
+        }
+    } 
+}
 
+
+        
 
         

@@ -6,6 +6,7 @@ const submitButton = document.getElementById('create-user-submit');
 const passwordErrorContainer = document.getElementById('password-length-error')
 const confirmPassword = document.getElementById('create-user-confirm-password');
 const confirmPasswordErrorContainer = document.getElementById('confirm-password-error')
+const passwordMatchSuccessContainer = document.getElementById('confirm-password-match')
 // Disabling Submit Button
 submitButton.disabled = true;
 passwordInput.addEventListener('input', function() {
@@ -13,13 +14,19 @@ passwordInput.addEventListener('input', function() {
     if (passwordInput.value.length >= 6) {
     submitButton.disabled = false;
     confirmPasswordErrorContainer.classList.remove('d-none');
+    passwordMatchSuccessContainer.classList.add('d-none');
 //   Password match validaiton
     if(passwordInput.value != confirmPassword.value)
-        submitButton.disabled = true;
+    {
+      submitButton.disabled = true;
+      isPasswordMatch = false;
+    }
+        
     passwordErrorContainer.classList.add('d-none');
 
   } else {
-    submitButton.disabled = true;
+    submitButton.disabled = false;
+    isPasswordMatch = true;
     passwordErrorContainer.classList.remove('d-none');
 
   }
@@ -33,6 +40,7 @@ confirmPassword.addEventListener('input', function(event) {
       {
         submitButton.disabled = false;
         confirmPasswordErrorContainer.classList.add('d-none');
+        passwordMatchSuccessContainer.classList.remove('d-none');
       }
   
   
@@ -40,6 +48,7 @@ confirmPassword.addEventListener('input', function(event) {
       isPasswordMatch = false;
       submitButton.disabled = true;
       confirmPasswordErrorContainer.classList.remove('d-none');
+      passwordMatchSuccessContainer.classList.add('d-none');
   
     }
   });

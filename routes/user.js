@@ -14,5 +14,12 @@ router.get('/isExsist',userController.checkIfUserExsists);
 router.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}));
 // Response Route from Google with user details if authenticated
 router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/login'}),accessController.createSession);
+// Reset Password
+router.post('/reset',userController.resetPassword);
+// Renders reset Password Form
+router.get('/reset/:id',accessController.renderResetPasswordForm);
+// Confirm Mail to send Password Reset Link
+router.post('/send-link',userController.sendResetPasswordLink)
+
 
 module.exports = router;

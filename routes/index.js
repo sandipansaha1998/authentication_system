@@ -13,7 +13,8 @@ router.get('/',passportLocal.checkAuthentication,homeController.home);
 router.get('/login',accessController.renderLogin);
 // Signup Page
 router.get('/sign-up',accessController.renderSignUp);
-
+// Reset Password
+router.get('/reset-password',accessController.renderConfirmEmail);
 
 
 router.use('/access',require('./access'));

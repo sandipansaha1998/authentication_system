@@ -32,10 +32,14 @@ let toggleMessage = (isUserExsists) => {
 
 // Callback for the eventlistner attached to email input
 let checkEmailExsists = (event) => {
+    const loader = document.querySelector('.spinner-grow');
+    const messageContainer = document.querySelector('#email-valdiate-message-container');
     email =  event.currentTarget.value;
     //Checks if its an email 
     if(email!= '' && email.includes('@') && email[email.length-1]!='@')
     {
+        loader.classList.remove('d-none');
+       
         $.ajax({
             type:'get',
             url:'user/isExsist',
@@ -44,6 +48,8 @@ let checkEmailExsists = (event) => {
                 function(data)
                 {
                     console.log("Success")
+                    loader.classList.add('d-none');
+                  
                     toggleMessage(data.ifUserExsists);
                 }
             ,err:

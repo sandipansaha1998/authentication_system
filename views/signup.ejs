@@ -16,10 +16,16 @@
             <i class="fa-regular fa-user"></i>
             <input class="col-10" type="email" name="email" placeholder="Type your name" form="create-user"
                 id="create-user-email" required>
-            <h6 class="mt-1 d-none" id="email-exsist-error"><span class="badge rounded-pill bg-danger">Email
-                    Exsists</span></h6>
-            <h6 class="mt-1 d-none" id="email-unique-success"><span class="badge rounded-pill bg-success"><i
-                        class="fa-regular fa-circle-check"></i> Email is Unique</span></h6>
+            <div class="spinner-grow d-none" style="width: 0.75rem; height: 0.75rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div id="email-valdiate-message-container">
+                <h6 class="mt-1 d-none" id="email-exsist-error"><span class="badge rounded-pill bg-danger"><i
+                            class="fa-solid fa-triangle-exclamation me-1"></i>Email
+                        Exsists</span></h6>
+                <h6 class="mt-1 d-none" id="email-unique-success"><span class="badge rounded-pill bg-success"><i
+                            class="fa-regular fa-circle-check"></i> Email is Unique</span></h6>
+            </div>
 
         </div>
         <!-- Password -->
@@ -29,17 +35,25 @@
             <input class="col-10" type="password" name="password" id="create-user-password"
                 placeholder="Type your password" form="create-user" required>
             </h6>
-            <h6 class="mt-1 d-none" id="password-length-error"><span class="badge rounded-pill bg-danger">Minimum 6
+            <h6 class="mt-1 d-none" id="password-length-error"><span class="badge rounded-pill bg-danger"><i
+                        class="fa-solid fa-triangle-exclamation me-1"></i>Minimum 6
                     characters</span></h6>
         </div>
-
+        <!-- Confirm Password -->
         <label>Confirm Password</label>
         <div class="container border-bottom p-3">
             <span><i class="fa-solid fa-lock"></i></span>
             <input class="col-10" type="password" name="confirm_password" placeholder="Type your password"
                 id="create-user-confirm-password" form="create-user" required>
-            <h6 class="mt-1 d-none" id="confirm-password-error"><span class="badge rounded-pill bg-danger">Passwords
-                    donot Match</span></h6>
+            <h6 class="mt-1 d-none" id="confirm-password-error">
+                <span class="badge rounded-pill bg-danger"><i
+                        class="fa-solid fa-triangle-exclamation me-1"></i>Passwords
+                    donot Match</span>
+            </h6>
+            <h6 class="mt-1 d-none" id="confirm-password-match"><span class="badge rounded-pill bg-success"><i
+                        class="fa-regular fa-circle-check me-1"></i> Passwords
+                    Match</span></h6>
+
         </div>
 
 
