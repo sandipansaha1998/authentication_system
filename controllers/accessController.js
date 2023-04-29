@@ -31,7 +31,6 @@ module.exports.destroySession = function(req,res)
 // Renders the Login Page
 module.exports.renderLogin = function (req,res) {
     try{
-        console.log(res.locals.flash)
         if(req.isAuthenticated())
     {   
         return res.redirect('/');
@@ -76,6 +75,15 @@ module.exports.renderConfirmEmail = function(req,res){
 //  Renders Password Reset Form for that particular User
 module.exports.renderResetPasswordForm = async function(req,res){
     try{
+        if(req.isAuthenticated()){
+            console.log('User Signed in');
+            return res.render('./reset_password/reset_pass_form',{
+                title:'Reset',
+                // User id is fetched from the url
+                user_id:req.params.id,
+                layout:'layout'
+            });
+        }
     let user = await User.findById(req.params.id);
     if(user)
     {
@@ -90,7 +98,7 @@ module.exports.renderResetPasswordForm = async function(req,res){
             })
         }
         else{
-            res.status(404).send('<h1>Link has expired</h1>');
+            return res.status(404).send('<h1>Link has expired</h1>');
         }
     } 
     }catch(e){

@@ -20,6 +20,7 @@ router.post('/reset',userController.resetPassword);
 router.get('/reset/:id',accessController.renderResetPasswordForm);
 // Confirm Mail to send Password Reset Link
 router.post('/send-link',userController.sendResetPasswordLink)
-
+// Get Info
+router.get('/info/:id',passportLocal.checkAuthentication,userController.getInfo)
 
 module.exports = router;

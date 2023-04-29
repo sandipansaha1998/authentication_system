@@ -48,7 +48,7 @@
                 <% console.log(flash); %>
                 <% if (flash.success && flash.success.length > 0) {%>
                     new Noty({
-                        theme: 'relax',
+                        theme: 'metroui',
                         text: '<%=flash.success%>',
                         type: 'success',
                         layout: 'topRight',
@@ -57,7 +57,7 @@
             <%}%>
                 <%  if (flash.error && flash.error.length > 0) {%>
                     new Noty({
-                        theme: 'relax',
+                        theme: 'metroui',
                         text: '<%=flash.error%>',
                         type: 'error',
                         layout: 'topRight',

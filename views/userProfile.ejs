@@ -1,0 +1,15 @@
+<div class="col-10 col-lg-5 card mx-auto mt-2">
+    <div class="card-header">
+        User Info<i class="fa-solid fa-circle-info ms-1"></i>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Name : <%=user.name %>
+        </h5>
+        <h5 class="card-text">Email : <%=user.email %>
+        </h5>
+        <a href="http://localhost:8000/user/reset/<%= user._id  %>" class="btn btn-outline-dark"
+            id='create-user-submit'>Change Password</a>
+    </div>
+    <script src="/js/validate_input.js"></script>
+
+</div>

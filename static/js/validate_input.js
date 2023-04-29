@@ -21,7 +21,7 @@ passwordInput.addEventListener('input', function() {
     }else{
       isPasswordMatch = true;
       passwordMatchSuccessContainer.classList.remove('d-none');
-      confirmPassword.classList.add('d-none');
+      confirmPasswordErrorContainer.classList.add('d-none');
 
     }
     if(isPasswordMatch && isEmailValidate){
@@ -41,6 +41,7 @@ passwordInput.addEventListener('input', function() {
 confirmPassword.addEventListener('input', function(event) {
   if(event.currentTarget.value.length<6)
     {
+      submitButton.disabled=true;
       passwordMatchSuccessContainer.classList.add('d-none');
       return;
     }

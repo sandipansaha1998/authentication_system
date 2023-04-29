@@ -1,0 +1,19 @@
+#reset-container {
+  background: #ffffff;
+}
+
+input[type="submit"]:disabled {
+  background: gray !important;
+  color: white;
+  cursor: not-allowed;
+}
+input[type="submit"]:disabled:hover {
+  background: gray !important;
+  color: white;
+  cursor: not-allowed;
+}
+
+input[type="password"] {
+  border: none;
+  outline: none;
+}

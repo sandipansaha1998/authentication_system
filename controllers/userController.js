@@ -1,9 +1,11 @@
 const User = require('../models/user');
+const passport = require('passport')
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const queue = require('../config/kue')
+const queue = require('../config/kue');
 const resetPasswordMailer = require('../worker/reset_password_email_worker');
-
+const ejs = require('ejs');
+const path = require('path');
 
 
 
@@ -84,7 +86,7 @@ module.exports.sendResetPasswordLink = async function(req,res){
                 }
               })
             console.log('Reset Link Sent to Registered Email')
-            req.flash('success','Password reset link sent to Registered Email');
+            req.flash('success','Link sent to Registered Email');
             res.redirect('/login')
         }
     }catch(e){
@@ -94,9 +96,8 @@ module.exports.sendResetPasswordLink = async function(req,res){
 }
 // Reset Password
 module.exports.resetPassword = async function(req,res){
-    console.log("************************")
-    console.log(req.body)
     try{
+    
         if(req.body.password != req.body.confirm_password)
         {
             console.log("Does not match")
@@ -110,7 +111,13 @@ module.exports.resetPassword = async function(req,res){
         user.password = hashedPassword;
         user.save();
             console.log('Reset Password Succesful')
-            req.flash('success','Your password is reset successfully');
+            
+            if(req.isAuthenticated){
+                req.flash('success','Your password is reset successfully');
+                return res.redirect('/');
+            }
+                
+            req.flash('success','Your password is reset successfully.Login to start');
             return res.redirect('/login')
         }
 
@@ -118,3 +125,18 @@ module.exports.resetPassword = async function(req,res){
         console.log(e);
     }  
     } 
+
+// Render User Information Page
+module.exports.getInfo= async function(req,res){
+    try{
+      
+        return res.render('userProfile',{
+            title:'User Info',
+            layout:'layout'
+        })
+    }catch(e){
+        console.log(e);
+        return;
+    }
+   
+} 
