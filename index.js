@@ -9,8 +9,7 @@ const express = require('express');
 const port = 8000;
 const app = express();
 
-//Helpers for rendering the correct static files
-require('./config/view-helper')(app);
+
 
 // Authentication using Passport
 const passport = require('passport');
@@ -31,6 +30,9 @@ const db_connection = require('./config/mongoose');
 // Flash Middleware
 const flash = require('connect-flash');
 const customMware = require('./config/flashMiddleware');
+
+//Helpers for rendering the correct static files
+require('./config/view-helper')(app);
 
 // Seting directory for  static files
 app.use(express.static(path.join(__dirname,env.asset_path)));

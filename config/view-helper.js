@@ -7,10 +7,10 @@ const path = require('path');
 module.exports = (app) =>{
     app.locals.assetPath = function(filePath)
     {
-        if(env == 'development')
+        if(env.name == 'development')
             return filePath;
     
 return JSON.parse(
-    fs.readFileSync(path.join(__dirname,'../public/assets/rev-manifest.json')) // reads rev-manifest.json , converts it to JSON and uses the filepath mentioned in views as keys.
+    fs.readFileSync(path.join(__dirname,'../public/static/rev-manifest.json')) // reads rev-manifest.json , converts it to JSON and uses the filepath mentioned in views as keys.
     )[filePath];
 }}

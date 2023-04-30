@@ -7,8 +7,7 @@
         </h5>
         <h5 class="card-text">Email : <%=user.email %>
         </h5>
-        <a href="http://localhost:8000/user/reset/<%= user._id  %>" class="btn btn-outline-dark"
-            id='create-user-submit'>Change Password</a>
+        <a href="/user/reset/<%= user._id  %>" class="btn btn-outline-dark" id='create-user-submit'>Change Password</a>
     </div>
     <script src="/js/validate_input.js"></script>
 </div>
