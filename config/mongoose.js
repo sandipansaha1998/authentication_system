@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const env = require('../config/enviroment')
 
 // Connect to the database
-mongoose.connect('mongodb://localhost/authentication_development');
+mongoose.connect(`mongodb://localhost/${env.db}`);
 
 
 //  aquire the connection to check if the connection is successfull

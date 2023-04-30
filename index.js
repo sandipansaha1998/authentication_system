@@ -1,9 +1,16 @@
 //Importing the required packages
 
+
+const env = require('./config/enviroment')
+//Path
+const path = require('path');
 // Express
 const express = require('express');
 const port = 8000;
 const app = express();
+
+//Helpers for rendering the correct static files
+require('./config/view-helper')(app);
 
 // Authentication using Passport
 const passport = require('passport');
@@ -15,8 +22,8 @@ const passportGoogle = require('./config/passport-google-oauth2-strategy');
 const session = require('express-session');
 const MongoStore =  require('connect-mongo');
 
-// Seting directory for layouts
-const expressLayouts = require('express-ejs-layouts');
+// Using for layout-partial implementation
+const expressLayouts = require('express-ejs-layouts'); 
 
 // Database Connection
 const db_connection = require('./config/mongoose');
@@ -26,7 +33,8 @@ const flash = require('connect-flash');
 const customMware = require('./config/flashMiddleware');
 
 // Seting directory for  static files
-app.use(express.static('static'));
+app.use(express.static(path.join(__dirname,env.asset_path)));
+
 
 //  Seting expressLayouts to be used with views
 app.use(expressLayouts);
@@ -48,7 +56,7 @@ app.set('views','./views');
 app.use(session({
     name:'Authentication System',
     // TODO change the secrect before deployment
-    secret:'auth_sys',
+    secret:env.session_cookie_key,
     saveUninitialized:true,
     resave:true,
     cookie:{
@@ -56,7 +64,7 @@ app.use(session({
     },
     store:new MongoStore(
         {
-            mongoUrl:`mongodb://localhost/authentication_development` // db for storing sessions
+            mongoUrl:`mongodb://localhost/${env.db}` // db for storing sessions
         }
     )
 }));
