@@ -1,4 +1,6 @@
 <form action="/user/reset" method="post" id="reset-password"></form>
+<link rel="stylesheet" href="/<%= assetPath('css/access_layout.css')%>">
+
 
 <div id="reset-container" class="col-12 col-md-5 mx-auto mt-3 p-4 rounded">
     <div class="box-title">
@@ -42,7 +44,8 @@
     <script>
         const isEmailValidate = true;
     </script>
-    <script src="/js/validate_input.js"></script>
+    <script src="/<%= assetPath('js/validate_input.js')%>"></script>
+
 
 
 </div>
