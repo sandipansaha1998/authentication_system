@@ -7,7 +7,7 @@ module.exports.resetPasswordLink = function(user){
     },'reset_password.ejs')
 
     nodemailer.transporter.sendMail({
-        from:'socialise.india.web@gmail.com',
+        from:'sandipan.developer@gmail.com',
         to:user.email,
         subject:"Reset Password Link",
         html: htmlString,

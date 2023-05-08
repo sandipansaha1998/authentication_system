@@ -1,25 +1,23 @@
 const path = require('path');
-
-
-
-
+// Development Mode Properties
 
 const development = {
     name:'development',
     asset_path:'/static' ,
     session_cookie_key:'crunchy',
-    db:'taskgrid_development',
+    db:'authentication_development',
     smtp:{
         service:'gmail',
         host:'smtp.gmail.com',
         port:587,
         secure:false,
         auth:{
-            user:'socialise.india.web@gmail.com',
-            pass:'bzvukndojhtxacyh'
+            user:process.env.AUTH_SYS_EMAIL,
+            pass:process.env.AUTH_SYS_PASS
         }
     }
 }
+// production Mode Properties
 
 const production = {
     name:'production',

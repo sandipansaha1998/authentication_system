@@ -49,7 +49,7 @@
                 <% if (flash.success && flash.success.length > 0) {%>
                     new Noty({
                         theme: 'metroui',
-                        text: '<%=flash.success%>',
+                        text: '<i class="fa-solid fa-circle-check me-1"></i><%=flash.success%>',
                         type: 'success',
                         layout: 'topRight',
                         timeout: 1500
@@ -58,7 +58,7 @@
                 <%  if (flash.error && flash.error.length > 0) {%>
                     new Noty({
                         theme: 'metroui',
-                        text: '<%=flash.error%>',
+                        text: '<i class="fa-solid fa-circle-xmark me-1"></i><%=flash.error%>',
                         type: 'error',
                         layout: 'topRight',
                         timeout: 1500
