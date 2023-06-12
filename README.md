@@ -2,7 +2,14 @@
 >
 A robust and scalable starter code for implementing user authentication and authorization in web applications. It provides a secure foundation with essential features such as user sign up, sign in, sign out, and password reset. The system supports email-based authentication as well as social authentication through Google login/signup.
 
-The web app is built on NodeJS with Express JS as the framework.The Model-View-Controller architecture was implemented.EJS served as templating engine .
+Redis was used for parallel jobs implementation.The web app utilizes Google SMTP mailing service.The static files were compressed and cached using gulp for optimized performance.The passwords are encrypted using bcrypt and stored safely in MongoDb collection in the server.
+The application was hosted on a AWS EC2 instance.
+
+
+## [Hosted URL link](http://authentication-system.socialise-india.in/)
+
+
+The web app is built on NodeJS with Express JS as the framework.The Model-View-Controller architecture was implemented.EJS served as templating engine.
 
 ### Features
 - [x] Signup users with unique emailID.
