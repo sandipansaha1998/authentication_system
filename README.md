@@ -41,30 +41,31 @@ The web app is built on NodeJS with Express JS as the framework.The Model-View-C
 
 Particulars | Version
 ----------- | ---------
-bcrypt: 5.1.0
-brcypt: 1.0.1
-connect-flash: 0.1.1
-connect-mongo: 5.0.0
-crypto: 1.0.1
-del: 7.0.0
-ejs: 3.1.9
-express: 4.18.2
-express-ejs-layouts: 2.5.1
-express-session: 1.17.3
-gulp: 4.0.2
-gulp-cssnano: 2.1.3
-gulp-rev: 10.0.0
-gulp-uglify-es: 3.0.0
-kue: 0.11.6
-mongoose: 7.0.5
-nodemailer: 6.9.1
-nodemon: 2.0.22
-noty: 3.2.0-beta-deprecated
-npm: 9.6.5
-passport: 0.6.0
-passport-google-oauth: 2.0.0
-passport-local: 1.0.0
-sessions: 0.0.2-7
+bcrypt| 5.1.0
+brcypt| 1.0.1
+connect-flash| 0.1.1
+connect-mongo| 5.0.0
+crypto| 1.0.1
+del| 7.0.0
+ejs| 3.1.9
+express| 4.18.2
+express-ejs-layouts| 2.5.1
+express-session| 1.17.3
+gulp| 4.0.2
+gulp-cssnano| 2.1.3
+gulp-rev| 10.0.0
+gulp-uglify-es| 3.0.0
+kue| 0.11.6
+mongoose| 7.0.5
+nodemailer| 6.9.1
+nodemon| 2.0.22
+noty| 3.2.0-beta-deprecated
+npm| 9.6.5
+passport| 0.6.0
+passport-google-oauth| 2.0.0
+passport-local| 1.0.0
+sessions| 0.0.2-7
+
 
 ### Directory Structure
 ```
