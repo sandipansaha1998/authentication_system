@@ -6,7 +6,7 @@ Redis was used for parallel jobs implementation.The web app utilizes Google SMTP
 The application was hosted on a AWS EC2 instance.
 
 
-## [Hosted URL link](http://authentication-system.socialise-india.in/)
+## [Hosted URL link](https://authentication-system.socialise-india.in/)
 
 
 The web app is built on NodeJS with Express JS as the framework.The Model-View-Controller architecture was implemented.EJS served as templating engine.
